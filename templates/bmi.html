@@ -1,0 +1,23 @@
+<!doctype>
+<head>
+<title>BMI Calculator</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bmi.css') }}">
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+</head>
+<body>
+<h1> BMI Calculator </h1>
+<div class="myDiv">
+<form class="pure-form" method="POST" action="/">
+Weight:<br>
+<input type="text" name="Weight" placeholder="Kilograms"><br><br>
+Height:<br>
+<input type="text" name="Height" placeholder="cm"><br><br>
+<button type="submit" class="pure-button pure-button-primary" value="submit">Submit</button>
+</form>
+</div>
+<div class="myDiv">
+{% if bmi %}
+<p>Your Body Mass Index is {{bmi}}</p>
+{% endif %}
+</div>
+</body>
